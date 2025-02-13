@@ -11,9 +11,10 @@ class SignUpView(APIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({
-                "user": serializer.data
-            }, status=status.HTTP_201_CREATED)
+            return Response(
+                serializer.data
+            , status=status.HTTP_201_CREATED)
+        print("Validation errors:", serializer.errors)  # 에러 출력 추가
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -27,7 +28,7 @@ class LoginView(APIView):
                 "error": "아이디와 비밀번호를 모두 입력해주세요."
             }, status=status.HTTP_400_BAD_REQUEST)
 
-        user = authenticate(request=request, username=username, password=password)
+        user = authenticate(request, username=username, password=password)
 
         if user:
             refresh = RefreshToken.for_user(user)
