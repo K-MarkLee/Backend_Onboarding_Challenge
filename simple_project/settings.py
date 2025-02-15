@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
@@ -97,8 +98,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 8,
+        }
     },
-
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
