@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
 from django.contrib.auth.models import AbstractUser, BaseUserManager, PermissionsMixin
-# from django.contrib.postgres.fields import JSONField
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, nickname, password=None, **extra_fields):
@@ -47,7 +46,6 @@ class CustomUser(AbstractUser, PermissionsMixin):
         validators=[MinLengthValidator(5, message='닉네임은 최소 5자 이상이어야 합니다.')]
     )
     roles = models.JSONField(default=list)
-    # roles = JSONField(default=list)
     
     objects = CustomUserManager()
     
