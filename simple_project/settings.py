@@ -8,8 +8,13 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ipv4 = config("ip4")
 
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    ipv4, 
+]
 
 # Application definition
 INSTALLED_APPS = [
