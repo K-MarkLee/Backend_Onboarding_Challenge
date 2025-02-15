@@ -9,9 +9,6 @@ from django.shortcuts import redirect
 def health_check(request):
     return JsonResponse({"status": "healthy"})
 
-def redirect_to_swagger(request):
-    return redirect('schema-swagger-ui')
-
 schema_view = get_schema_view(
     openapi.Info(
         title="Backend Onboarding Challenge API",
@@ -26,17 +23,18 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    # Root URL redirects to Swagger UI
-    path('', redirect_to_swagger, name='root'),
+    # API endpoints
+    path('api/accounts/', include('accounts.urls')),
     
+    # Admin and documentation
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    
-    # Swagger UI URL
-    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-
+    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    
+    # Root URL shows Swagger UI
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='root'),
+    
     # Health check endpoint
     path('health/', health_check, name='health_check'),
 ]
