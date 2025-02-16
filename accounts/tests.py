@@ -72,7 +72,6 @@ class TestAuth:
         assert response.status_code == 400
 
     def test_signup_password_validation(self, api_client):
-        # 너무 짧은 비밀번호 (MinimumLengthValidator)
         response = api_client.post('/accounts/signup', {
             "username": "testuser1",
             "password": "123",
@@ -81,7 +80,6 @@ class TestAuth:
         assert response.status_code == 400
         assert 'password' in response.data
 
-        # 숫자만 있는 비밀번호 (NumericPasswordValidator - 비활성화됨)
         response = api_client.post('/accounts/signup', {
             "username": "testuser4",
             "password": "12345678",  
@@ -89,7 +87,6 @@ class TestAuth:
         })
         assert response.status_code == 201  
 
-        # 흔한 비밀번호 (CommonPasswordValidator - 비활성화됨)
         response = api_client.post('/accounts/signup', {
             "username": "testuser5",
             "password": "password123",  

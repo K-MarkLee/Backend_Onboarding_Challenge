@@ -21,7 +21,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     # API endpoints
-    path('api/accounts/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
     
     # Documentation
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
