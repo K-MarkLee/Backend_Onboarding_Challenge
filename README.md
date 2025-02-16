@@ -15,12 +15,16 @@
 
 **[Service Link](13.125.8.202)**
 
+   
+
 ## Duration
 2025-02-13 ~ 2025-02-16
-
+ 
 <br>
 <a name="setup"></a>
-
+ 
+ 
+  
 ## Setup
 To set up and run the project, please follow the steps below:
 
@@ -81,21 +85,48 @@ To set up and run the project, please follow the steps below:
     [tests.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/views.py)
     ![signup](https://github.com/user-attachments/assets/1616314e-f193-44d4-8c47-06d96f163acf)
     ![login](https://github.com/user-attachments/assets/cc1c3f12-7040-426d-b3ea-2d357ab59a9e)
-3. urls 구현하기
+
+
+ 
+2. urls 구현하기
     [urls.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/urls.py)
-4. 유닛 테스트 진행하기
+
+
+ 
+3. 유닛 테스트 진행하기
     ![tests](https://github.com/user-attachments/assets/eb3e1852-caf6-4cec-8bef-3991f59bee9a)
-5. Swagger UI 연결하기
+
+
+ 
+4. Swagger UI 연결하기
     ![swagger](https://github.com/user-attachments/assets/10df4184-f607-4a18-b892-27c9d4c49946)
-7. AWS EC2 연결하기
+
+
+ 
+5. AWS EC2 연결하기
     [Swagger](http://13.125.8.202)
-8. AI 를 통한 코드 리뷰 받아보기 (Refactor 파트로)
-10. 피드백 받아 코드 개선하기 (Refactor 파트로)
-11. AWS EC2 재배포 하기
-12. PR 관리하기
+
+
+ 
+6. AI 를 통한 코드 리뷰 받아보기 (Refactor 파트로)
+
+
+
+ 
+7. 피드백 받아 코드 개선하기 (Refactor 파트로)
+
+
+ 
+8. AWS EC2 재배포 하기
+
+
+ 
+9. PR 관리하기
     [PR](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/pulls?q=is%3Apr+is%3Aclosed)
     ![pr](https://github.com/user-attachments/assets/1779a275-6d09-4d41-95d6-8303c23d9c2c)
 
+
+  
 
 <br>
 
@@ -112,8 +143,9 @@ To set up and run the project, please follow the steps below:
 
     - 결과 : response의 형태는 올바르나 아직 signup의 response가 통과되지 않음.
 
+ 
 
-
+ 
 2. Signup의 테스트 케이스가 통과되지 못함
     - 원인 : 다양한 테스트를 통하여, signup에 테스트 비밀번호가 password validation을 통과하지 못하여 생긴 문제라는 것을 확인. serialzer에 유저의 비밀번호 최소 검증을 위한 django 기본 auth password validator를 사용하였는데, 이를 통과하지 못하고 생긴 문제
 
@@ -121,6 +153,8 @@ To set up and run the project, please follow the steps below:
 
     - 결과 : password validartor가 잘 작동하고 Signup의 테스트 케이스도 통과함.
 
+
+  
 3. JWT 리프레시 토큰 전당 방식 불일치
     - 원인 : 요청사항을 따르면, login시 access token만을 응답해야함. 이때, refresh 토큰을 따로 설정 해두지 않아서 access token을 재생성 할 수 없음
 
@@ -128,6 +162,8 @@ To set up and run the project, please follow the steps below:
 
     - 결과 : access token의 재생성 테스트 케이스 실패
 
+
+  
 4. TokenRefreshView의 충돌
     - 원인 : refresh token을 헤더에 적용시키기 위해서 커스텀 View를 생성했는데, urls.py에서 아직 DRF 의 기존 RokenRefreshView를 사용하고 있음. 
 
@@ -135,6 +171,8 @@ To set up and run the project, please follow the steps below:
 
     - 결과 : 테스트 케이스 통과
 
+
+  
 5. Django Admin 로그인 페이지 리다이렉트 문제
     - 문제 : EC2에서 도메인 접속시 swagger ui대신 django admin 로그인 페이지로 이동.
     - 원인 : Django REST Framework의 기본 인증 설정이 인증을 요구, Swagger Ui 접근시 인증을 요구. 
@@ -143,6 +181,8 @@ To set up and run the project, please follow the steps below:
 
     - 결과 : 해결 완료
 
+
+  
 6. Nginx에서 Ip의 노출 문제
     - 문제 : Nginx에서 ip의 노출이 되는 문제.
 
@@ -150,6 +190,7 @@ To set up and run the project, please follow the steps below:
 
     - 결과 : 해결은 완료 했다만, 생각해보니 도메인 자체를 생성하지 않았기에 노출 해도 큰 문제는 없었을 것. (ec2 ip 접속을 내 아이피로 제한해둠)
 
+ 
 
 <br>
 
@@ -164,11 +205,15 @@ AI의 코드 리뷰를 통한 리팩토링 실시.
 
     - 삭제완료
 
+
+  
 2. serializers에서 password의 필드가 중복으로 정의되었다.
     - password가 **kwargs와 validate_password에 중복으로 정의되고 있었음. validate_password 를 커스텀해서 사용하고 있기 때문에 **kwargs에서는 더이상 password릐 설정이 필요하지 않음.
 
     - 삭제완료
 
+
+  
 3. views 에서 에러 메시지를 중복되게 처리를 하고 있다.
     - views에서 Return response 로 http응답과 에러 메시지를 띄웠는데 중복으로 print(serializer.errors)를 사용하고 있음. 중복된 에러 메시지 반환을 제거후 통합함.
 
