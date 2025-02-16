@@ -13,7 +13,7 @@ ipv4 = config("ip4")
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    ipv4, 
+    ipv4,
 ]
 
 # Application definition
@@ -101,13 +101,6 @@ DATABASES = {
         'PORT': config('DB_PORT'),
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
