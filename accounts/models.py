@@ -30,11 +30,6 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(username, nickname, password, **extra_fields)
 
 class CustomUser(AbstractUser, PermissionsMixin):
-    ROLE_CHOICES = [
-        ('USER', '일반 사용자'),
-        ('ADMIN', '관리자'),
-    ]
-    
     username = models.CharField(
         max_length=50, 
         unique=True, 
