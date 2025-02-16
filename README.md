@@ -81,13 +81,16 @@ To set up and run the project, please follow the steps below:
 2. 로그인 구현하기
 3. Token 갱신 구현하기
 4. 유닛 테스트 진행하기
-5. 시나리오 테스트 진행하기
-6. Swagger UI 연결하기
-7. AWS EC2 연결하기
-8. AI 를 통한 코드 리뷰 받아보기
-9. 피드백 받아 코드 개선하기
-10. AWS EC2 재배포 하기
-11. PR 관리하기
+    [tests.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/tests.py)
+5. Swagger UI 연결하기
+6. AWS EC2 연결하기
+    [Swagger](http://13.125.8.202)
+7. AI 를 통한 코드 리뷰 받아보기
+8. 피드백 받아 코드 개선하기
+9. AWS EC2 재배포 하기
+10. PR 관리하기
+    [PR](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/pulls?q=is%3Apr+is%3Aclosed)
+
 <br>
 
 
@@ -164,3 +167,6 @@ AI의 코드 리뷰를 통한 리팩토링 실시.
     - views에서 Return response 로 http응답과 에러 메시지를 띄웠는데 중복으로 print(serializer.errors)를 사용하고 있음. 중복된 에러 메시지 반환을 제거후 통합함.
 
     - 완료
+
+
+
