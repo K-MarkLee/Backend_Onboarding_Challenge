@@ -77,18 +77,18 @@ To set up and run the project, please follow the steps below:
 <a name="features"></a>
 
 ## Features
-1. 회원가입 구현하기
-2. 로그인 구현하기
-3. Token 갱신 구현하기
-4. 유닛 테스트 진행하기
-    [tests.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/tests.py)
-5. Swagger UI 연결하기
-6. AWS EC2 연결하기
+1. 회원가입/ 로그인/ refreshToken 구현하기
+    [tests.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/views.py)
+2. urls 구현하기
+    [urls.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/urls.py)
+3. 유닛 테스트 진행하기
+4. Swagger UI 연결하기
+5. AWS EC2 연결하기
     [Swagger](http://13.125.8.202)
-7. AI 를 통한 코드 리뷰 받아보기
-8. 피드백 받아 코드 개선하기
-9. AWS EC2 재배포 하기
-10. PR 관리하기
+6. AI 를 통한 코드 리뷰 받아보기
+7. 피드백 받아 코드 개선하기
+8. AWS EC2 재배포 하기
+9. PR 관리하기
     [PR](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/pulls?q=is%3Apr+is%3Aclosed)
 
 <br>
