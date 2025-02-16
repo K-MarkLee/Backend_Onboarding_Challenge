@@ -79,17 +79,23 @@ To set up and run the project, please follow the steps below:
 ## Features
 1. 회원가입/ 로그인/ refreshToken 구현하기
     [tests.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/views.py)
-2. urls 구현하기
+    ![signup](https://github.com/user-attachments/assets/1616314e-f193-44d4-8c47-06d96f163acf)
+    ![login](https://github.com/user-attachments/assets/cc1c3f12-7040-426d-b3ea-2d357ab59a9e)
+3. urls 구현하기
     [urls.py](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/blob/main/accounts/urls.py)
-3. 유닛 테스트 진행하기
-4. Swagger UI 연결하기
-5. AWS EC2 연결하기
+4. 유닛 테스트 진행하기
+    ![tests](https://github.com/user-attachments/assets/eb3e1852-caf6-4cec-8bef-3991f59bee9a)
+5. Swagger UI 연결하기
+    ![swagger](https://github.com/user-attachments/assets/10df4184-f607-4a18-b892-27c9d4c49946)
+7. AWS EC2 연결하기
     [Swagger](http://13.125.8.202)
-6. AI 를 통한 코드 리뷰 받아보기
-7. 피드백 받아 코드 개선하기
-8. AWS EC2 재배포 하기
-9. PR 관리하기
+8. AI 를 통한 코드 리뷰 받아보기 (Refactor 파트로)
+10. 피드백 받아 코드 개선하기 (Refactor 파트로)
+11. AWS EC2 재배포 하기
+12. PR 관리하기
     [PR](https://github.com/K-MarkLee/Backend_Onboarding_Challenge/pulls?q=is%3Apr+is%3Aclosed)
+    ![pr](https://github.com/user-attachments/assets/1779a275-6d09-4d41-95d6-8303c23d9c2c)
+
 
 <br>
 
