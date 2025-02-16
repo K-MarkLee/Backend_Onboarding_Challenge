@@ -24,7 +24,6 @@ class SignUpView(APIView):
             return Response(
                 serializer.data
             , status=status.HTTP_201_CREATED)
-        print("Validation errors:", serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
