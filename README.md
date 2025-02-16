@@ -87,7 +87,7 @@ To set up and run the project, please follow the steps below:
 8. AI 를 통한 코드 리뷰 받아보기
 9. 피드백 받아 코드 개선하기
 10. AWS EC2 재배포 하기
-
+11. PR 관리하기
 <br>
 
 
