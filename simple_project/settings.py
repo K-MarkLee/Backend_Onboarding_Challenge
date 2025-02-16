@@ -16,12 +16,6 @@ ALLOWED_HOSTS = [
     ipv4,
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    ipv4
-]
-CORS_ALLOW_CREDENTIALS = True
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
